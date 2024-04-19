@@ -1,13 +1,16 @@
 {
   "name": "ipns-did-kit",
+  "type": "module",
   "license": "MIT",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "devDependencies": {
+    "@helia/http": "^1.0.4",
     "prettier": "3.2.5"
   },
   "dependencies": {
-    "did-doc": "1.0.0",
+    "@helia/block-brokers": "^2.1.0",
+    "@helia/routers": "^1.0.3",
     "did-resolver": "4.1.0",
     "elliptic": "6.5.5",
     "ipns-did-resolver": "0.1.1",
