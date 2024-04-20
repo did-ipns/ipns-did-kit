@@ -3,10 +3,28 @@
   "type": "module",
   "license": "MIT",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "source": "src/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
   "devDependencies": {
     "@helia/http": "^1.0.4",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "@types/validator": "13.11.9",
+    "tsup": "8.0.2",
+    "typescript": "5.4.3"
   },
   "dependencies": {
     "@helia/block-brokers": "^2.1.0",
