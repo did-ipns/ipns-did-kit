@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { Resolver } from "did-resolver";
-import { getResolver } from "ipns-did-resolver";
+import { getResolver } from "@did-ipns/resolver";
 import elliptic from "elliptic";
 import QRCode from "qrcode";
 import { createHash } from "crypto";
