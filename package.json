@@ -1,0 +1,42 @@
+{
+  "name": "@did-ipns/kit",
+  "type": "module",
+  "license": "MIT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/did-ipns/ipns-did-kit.git"
+  },
+  "source": "src/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@helia/http": "^1.0.4",
+    "prettier": "3.2.5",
+    "@types/validator": "13.11.9",
+    "tsup": "8.0.2",
+    "typescript": "5.4.3"
+  },
+  "dependencies": {
+    "@did-ipns/resolver": "1.0.0",
+    "@helia/block-brokers": "^2.1.0",
+    "@helia/routers": "^1.0.3",
+    "did-resolver": "4.1.0",
+    "elliptic": "6.5.5",
+    "lodash": "4.17.21",
+    "qrcode": "1.5.3"
+  }
+}

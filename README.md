@@ -13,10 +13,11 @@ The IPNS DID Kit is a JavaScript library designed to facilitate the creation, ma
 
 ## Installation
 
-To install the library, you can use npm:
+To install the library, you can use npm/yarn:
 
 ```bash
 npm install @did-ipns/kit
+yarn install @did-ipns/kit
 ```
 
 ## Usage
@@ -24,9 +25,20 @@ npm install @did-ipns/kit
 ### Initialization
 
 ```javascript
-import IpnsDidKit from 'path-to-IpnsDidKit';
+import IpnsDidKit from '@did-ipns/kit';
+import { createHeliaHTTP } from "@helia/http";
+import { trustlessGateway } from "@helia/block-brokers";
+import { delegatedHTTPRouting } from "@helia/routers";
 
-const ipnsDidKit = new IpnsDidKit(yourHeliaConfig);
+const helia = await createHeliaHTTP({
+    blockBrokers: [
+        trustlessGateway({
+            gateways: ["http://127.0.0.1:8080"],
+        }),
+    ],
+    routers: [delegatedHTTPRouting("http://127.0.0.1:8080/routing/v1")],
+});
+const ipnsDidKit = new IpnsDidKit(helia);
 ```
 
 ### Creating a New DID Document
